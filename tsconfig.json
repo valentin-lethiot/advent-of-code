@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
     "skipLibCheck": true,
-    "target": "es6",
-    "module": "commonjs",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "allowJs": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "./build",
-    "rootDir": "src",
+    "baseUrl": ".",
   },
   "include": [
-    "src/**/*"
-  ],
+    "2022/src/**/*", 
+    "2023/**/*", 
+    "utils/**/*" 
+, "2022/day-1", "2022/day-2", "2022/day-3-", "2022/day-4", "2022/day-5", "2022/run.ts"  ],
   "exclude": [
     "node_modules"
   ],

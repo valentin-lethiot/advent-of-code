@@ -1,11 +1,5 @@
 import { Part } from '../../../utils/part'
 
-const rules = {
-  red: 12,
-  green: 13,
-  blue: 14,
-}
-
 export type Game = {
   id: number,
   sets: Set[]

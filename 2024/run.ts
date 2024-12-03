@@ -11,4 +11,6 @@ const executeDay = (day: Day): void => {
 };
 
 console.log("---------------------------");
-executeDay(new Day1("Day 1: Trebuchet?!", formatInputs("./day-1/input.txt")));
+executeDay(
+  new Day1("Day 1: Historian Hysteria", formatInputs("./day-1/input.txt"))
+);

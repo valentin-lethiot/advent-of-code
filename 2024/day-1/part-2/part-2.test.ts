@@ -1,14 +1,12 @@
-import { describe, expect, test } from "vitest";
+import { expect, test } from "vitest";
 import { Part2 } from "./part-2";
 
-const input = ["1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet"];
+const input = ["3   4", "4   3", "2   5", "1   3", "3   9", "3   3"];
 
 const day = new Part2(input);
 
-describe("Part 2", () => {
-  test("Solve", () => {
-    const result = day.solve();
+test("Solve", () => {
+  const result = day.solve();
 
-    expect(result).toBe("281");
-  });
+  expect(result).toBe("31");
 });

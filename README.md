@@ -21,8 +21,9 @@ Collection de mes solutions pour les défis [Advent of Code](https://adventofcod
 - ✅ Jour 2
 - ✅ Jour 3
 
-### 2025 - 1/12 
+### 2025 - 2/12 
 - ✅ Jour 1
+- ✅ Jour 2
 ---
 
 *Joyeux Advent of Code !* 🎅✨

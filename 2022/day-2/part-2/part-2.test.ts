@@ -1,5 +1,5 @@
+import { expect, test } from 'vitest';
 import { Part2 } from "./part-2";
-import { expect, test } from 'vitest'
 
 const input = [
   'A Y',

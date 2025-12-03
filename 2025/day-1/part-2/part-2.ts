@@ -1,42 +1,46 @@
 import { Part } from "../../../utils/part";
-import { stringToNumber } from "../../../utils/types/types.utils";
 
 export class Part2 implements Part {
   inputs: string[];
-  leftList: number[] = [];
-  rightList: number[] = [];
+  counter: number = 0;
 
   constructor(inputs: string[]) {
     this.inputs = inputs;
   }
 
   solve(): string {
-    this.splitInputs();
+    let start = 50;
 
-    let sum = 0;
+    for (const input of this.inputs) {
+      const direction = this.getDirection(input);
+      const distance = this.getDistance(input);
+      
+      for (let i = 0; i < distance; i++) {
+        if (direction === 'L') {
+          start--;
+          if (start < 0) start = 99;
+        } else {
+          start++;
+          if (start >= 100) start = 0;
+        }
+        
+        if (start === 0) {
+          this.counter++;
+        }
+      }
 
-    this.leftList.forEach((leftNumber) => {
-      sum += leftNumber * this.getAppearences(leftNumber);
-    });
+    }
 
-    return sum.toString();
+
+
+    return this.counter.toString();
   }
 
-  splitInputs() {
-    this.inputs.forEach((input) => {
-      const splitedInput = input.split("   ");
-
-      this.leftList.push(stringToNumber(splitedInput[0]));
-      this.rightList.push(stringToNumber(splitedInput[1]));
-    });
+  getDirection(input: string): string {
+    return input.charAt(0);
   }
 
-  getSmallestNumberIndex(list: number[]): number {
-    return list.indexOf(Math.min(...list));
-  }
-
-  getAppearences(number: number): number {
-    return this.rightList.filter((rightNumber) => rightNumber === number)
-      .length;
+  getDistance(input: string): number {
+    return parseInt(input.slice(1));
   }
 }

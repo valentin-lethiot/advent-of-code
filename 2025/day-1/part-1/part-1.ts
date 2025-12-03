@@ -15,25 +15,19 @@ export class Part1 implements Part {
       const direction = this.getDirection(input);
       const distance = this.getDistance(input);
       
-      console.log(`Input: ${input}, Direction: ${direction}, Distance: ${distance}, Start: ${start}`);
+      for (let i = 0; i < distance; i++) {
+        if (direction === 'L') {
+          start--;
+          if (start < 0) start = 99;
+        } else {
+          start++;
+          if (start >= 100) start = 0;
+        }
+      }
 
-
-      console.log((99 + 1) % 100);
-      //start = (start + (direction === 'L' ? -distance : distance)) % 100;
-      
-      // if (direction === 'L') {
-      //   if (distance - start < 0 || distance - start === 0) {
-      //     this.counter++;
-      //   }
-      //   start -= distance;
-
-      // } else {
-      //   if (distance + start > 99 || distance + start === 0) {
-      //     this.counter++;
-      //   }
-
-      //   start += (distance % 100);
-      // }
+      if (start === 0) {
+        this.counter++;
+      }
     }
 
 

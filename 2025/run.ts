@@ -3,6 +3,7 @@ import { formatInputs } from "../utils/fileReader";
 
 import { Day1 } from "./day-1/day-1";
 import { Day2 } from "./day-2/day-2";
+import { Day3 } from "./day-3/day-3";
 
 const executeDay = (day: Day): void => {
   console.log(day.name);
@@ -17,4 +18,7 @@ executeDay(
 );
 executeDay(
   new Day2("Day 2: Gift Shop", formatInputs("./day-2/input.txt"))
+);
+executeDay(
+  new Day3("Day 3: Lobby", formatInputs("./day-3/input.txt"))
 );
